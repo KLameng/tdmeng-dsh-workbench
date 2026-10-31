@@ -1,0 +1,8 @@
+# dsh 组合包补丁：同时挂载「身份说明书技能」+「tact_locate 工具」
+# 把下面两处 <绝对路径> 改成解压后本包所在目录的绝对路径，再：
+#   dsh web --patch cordis.patch.yml        # 或用 dsh plugin add . 自动读此文件
+- insert:
+    - id: dsh-tact-skill-skill
+      name: 'file:///<绝对路径>/dsh-tact-skill/skill.js'
+    - id: dsh-tact-skill-tool
+      name: 'file:///<绝对路径>/dsh-tact-skill/index.js'

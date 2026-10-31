@@ -1,0 +1,10 @@
+{
+  "name": "tdmeng-dsh-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Td.蒙 dsh 工作台：便携 Node + DeepSeek Harness + 总管/TACT/ACMG 技能包，双击即用",
+  "dependencies": {
+    "@deepseek-ai/dsh": "^0.2.1-rc.2"
+  }
+}

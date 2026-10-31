@@ -1,0 +1,1 @@
+{"query":"{ variant(id: \"13-51974225-TC-T\", dataset: gnomad_r4) { variant_id rsid chrom pos ref alt allele_freq populations { id ac an hom } } }"}

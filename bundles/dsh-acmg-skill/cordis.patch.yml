@@ -1,0 +1,9 @@
+# dsh 组合包补丁：挂载「ACMG 评级技能群身份说明书」+「环境自检工具」
+# 把下面两处 <绝对路径> 改成解压后本包所在目录的绝对路径（正斜杠 /），再：
+#   dsh web --patch cordis.patch.yml
+# 真正逐码评级由调度模型读身份说明书后，用 dsh 自带 bash/pwsh 执行技能群内 Python 脚本。
+- insert:
+    - id: dsh-acmg-skill-skill
+      name: 'file:///<绝对路径>/dsh-acmg-skill/skill.js'
+    - id: dsh-acmg-skill-tool
+      name: 'file:///<绝对路径>/dsh-acmg-skill/index.js'

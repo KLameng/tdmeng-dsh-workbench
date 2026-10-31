@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+
+# 缓存与临时文件
+_cache/
+*.log
+*.tmp
+
+# 评级归档（敏感数据，不上公开仓库）
+*.archive.json
+acmg_result_archive.json
+
+# 校验产物（本地生成，不随库分发）
+reviews/vcep_structure_*.md
+reviews/vcep_structure_*.json
+
+# 环境变量与密钥
+.env
+.env.*
+*.key
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+# ACMG 评级技能群 · 依赖锁定（requirements-lock.txt）
+# 生成于 2026-10-22。供复现与追溯用。
+#
+# 说明：
+# - requirements.txt 保持范围写法（requests>=2.28, pyliftover>=0.4），本文件不替代它；
+# - 本文件记录「当前验证通过的实测版本」：锁文件给构建用、deps_version 给审计用；
+# - 生成方式：在目标 venv 中 pip install -r requirements.txt 后，按实测版本回填；
+# - 传递依赖不锁（收益低、冲突高），仅锁直接依赖。
+
+# 实测环境
+# Python 3.13.16
+
+# 直接依赖（实测版本）
+requests==2.34.2
+pyliftover==0.4.1

@@ -1,0 +1,6 @@
+# 运行产物（不入版本库、不随包分发）
+*.bak*
+*.log
+__pycache__/
+*.pyc
+result*.json

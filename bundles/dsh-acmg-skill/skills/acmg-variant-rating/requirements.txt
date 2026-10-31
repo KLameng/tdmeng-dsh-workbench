@@ -1,0 +1,31 @@
+# ACMG 评级技能群 Python 依赖（2026-10-15 补，整改 P1-3 / P2-2）
+# 安装：pip install -r requirements.txt
+# 建议在隔离 venv 中安装（本机托管 Python 需先装 requests，否则下列技能 ImportError）：
+#   ev-gene-identity / ev-disease-info / ev-variant-literature-patient / arad-inheritance-judgment
+requests>=2.28
+
+# hg19↔hg38 坐标转换（v1.1.0，P1-B 修复）：standardize_variant.py 主入口依赖 pyliftover，
+# 缺此包会直接 ImportError，必须随包安装
+pyliftover>=0.4
+
+# ---------------------------------------------------------------------------
+# 可选环境变量（不设则用默认值，不影响核心评级逻辑）
+# ---------------------------------------------------------------------------
+# NCBI_EMAIL=you@example.com
+#   NCBI E-utilities 要求请求携带联系邮箱。默认使用中性占位 variant-rating-skill@example.com，
+#   建议设为真实邮箱规避 NCBI 限流。涉及 arad-inheritance-judgment/main.py。
+#
+# GNOMAD_INSECURE=1
+#   仅在 gnomAD 证书确实错位（SSL date mismatch）时临时降级证书校验；
+#   默认严格校验 SSL 证书（安全优先），不设本变量即校验证书。
+#   涉及 ev-gnomad-constraint / ev-pp2 的 query_constraint.py。
+
+# ---------------------------------------------------------------------------
+# 外部 CLI 依赖（非 pip 包，不装入上方 pip 列表以免 pip install 失败，需单独安装）
+# ---------------------------------------------------------------------------
+#   lark-cli（飞书云空间/CLI 工具）——跨设备云盘归档同步依赖：
+#     评级前拉取云盘归档（acmg-total-scheduler 入口）、收尾 §3.5.1 合并上传覆盖云盘归档。
+#   本机 PATH 默认不含 lark-cli，须按飞书 CLI 官方方式安装并登录，确保命令可调用后再跑云盘归档同步；
+#   未安装时云盘同步按"失败不阻断评级"边界处理（记录 warning、评级继续、下次会话再同步）。
+#   requirements.txt 仅声明运行依赖，lark-cli 不装入此处（非 pip 包，装入会导致 pip install 失败）。
+

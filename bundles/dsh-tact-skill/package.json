@@ -1,0 +1,38 @@
+{
+  "name": "dsh-tact-skill",
+  "version": "1.1.5",
+  "description": "TACT 三轴坐标定位 · DeepSeek Harness 组合包：注册 tact_locate 工具，对 AI 失败现象逐坐标 LLM 判定（前置排除闸 → L轴 → M/P 母→子剪枝），输出五项报告。",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "skill.js",
+    "tact-core.cjs",
+    "cordis.patch.yml",
+    "references",
+    "skills",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.0.1-rc.1",
+    "@deepseek-ai/dsh-skill": "*",
+    "@deepseek-ai/cordis": ">=4.0.1-rc.1"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "tact",
+    "three-axis",
+    "ai-error-classification"
+  ],
+  "license": "MIT"
+}
